@@ -14,7 +14,7 @@ Similarly, tqdm, opencv, pillow need to be installed in the ArcGIS python enviro
 * ## create semantic segmentation  samples
 
 ```Python  
-SemanticSegmentation.py --input-image=xxx.tif --input-shpfile=xxx.shp --class-field=xxx --output-path=xxx`  
+SemanticSegmentation.py --input-image=xxx.tif --input-shpfile=xxx.shp --class-field=xxx --output-path=xxx  
 ```
 
 ![water](https://github.com/junjieliwhu/LabelRS/blob/main/img/seg1.jpg)
@@ -44,7 +44,7 @@ SemanticSegmentation.py --input-image=xxx.tif --input-shpfile=xxx.shp --class-fi
 * ## create object detection samples
 
 ```Python  
-ObjectDetection.py --input-image=xxx.tif --input-shpfile=xxx.shp --class-field=xxx --output-path=xxx`  
+ObjectDetection.py --input-image=xxx.tif --input-shpfile=xxx.shp --class-field=xxx --output-path=xxx  
 ```
 
 ![building](https://github.com/junjieliwhu/LabelRS/blob/main/img/object1.jpg)
@@ -70,7 +70,7 @@ ObjectDetection.py --input-image=xxx.tif --input-shpfile=xxx.shp --class-field=x
 * ## create  classification samples 
 
 ```Python 
-Classification.py --input-image=xxx.tif --input-shpfile=xxx.shp --class-field=xxx --output-path=xxx` 
+Classification.py --input-image=xxx.tif --input-shpfile=xxx.shp --class-field=xxx --output-path=xxx 
 ```
 
 ![class](https://github.com/junjieliwhu/LabelRS/blob/main/img/classification.jpg)
