@@ -13,11 +13,15 @@ Similarly, tqdm, opencv, pillow need to be installed in the ArcGIS python enviro
 # usage
 ## create semantic segmentation  samples
 
+![water](https://github.com/junjieliwhu/LabelRS/blob/main/img/seg1.jpg)
+![water](https://github.com/junjieliwhu/LabelRS/blob/main/img/seg1.png)
 
+![road](https://github.com/junjieliwhu/LabelRS/blob/main/img/seg2.jpg)
+![road](https://github.com/junjieliwhu/LabelRS/blob/main/img/seg2.png)
 
 `SemanticSegmentation.py --input-image=xxx.tif --input-shpfile=xxx.shp --class-field=xxx --output-path=xxx`  
 
-Parameters Description  
+* Parameters Description  
 
 |             NAME            |  TYPE | REQUIRED |                                             DESCRIPTION                                            | DEFAULT |               EXAMPLE               |
 |:---------------------------:|:-----:|:--------:|:--------------------------------------------------------------------------------------------------:|:-------:|:-----------------------------------:|
@@ -37,7 +41,7 @@ Parameters Description
 |           --filter          | float |   False  |                            Filter out samples with few foreground pixels                           |   0.05  |                   0.05              |
 
 
-create remote sensing images and annotations for object detection 
+## create object detection samples
 
 `ObjectDetection.py --input-image=xxx.tif --input-shpfile=xxx.shp --class-field=xxx --output-path=xxx`  
 
