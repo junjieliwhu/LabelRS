@@ -10,7 +10,7 @@ We strongly recommend using Python scripts instead of ArcGIS plugins
 
 Similarly, tqdm, opencv, pillow need to be installed in the ArcGIS python environment
 
-# usage
+# Usage
 * ## create semantic segmentation  samples
 
 `SemanticSegmentation.py --input-image=xxx.tif --input-shpfile=xxx.shp --class-field=xxx --output-path=xxx`  
@@ -85,8 +85,14 @@ Similarly, tqdm, opencv, pillow need to be installed in the ArcGIS python enviro
 |   --stretch-method   |  int |   FALSE  | Band stretching method,including 0,Percentage Truncation; 1,Standard Deviation; 2,Maximum and Minimum |    0    |                  0                 |
 | --stretch-parameters |  str |   FALSE  |                                the input parameters of band stretching                                |   None  |              0.5,99.5              |
 
+# Citation
 
 
+# Contact
+
+Junjie Li, School of Remote Sensing and Information Engineering, Wuhan University  
+
+Email: junjieli@whu.edu.cn
 
 
 
