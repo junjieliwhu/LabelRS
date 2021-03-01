@@ -11,7 +11,7 @@ We strongly recommend using Python scripts instead of ArcGIS plugins
 Similarly, tqdm, opencv, pillow need to be installed in the ArcGIS python environment
 
 # usage
-## create semantic segmentation  samples
+* ## create semantic segmentation  samples
 
 `SemanticSegmentation.py --input-image=xxx.tif --input-shpfile=xxx.shp --class-field=xxx --output-path=xxx`  
 
@@ -39,7 +39,7 @@ Similarly, tqdm, opencv, pillow need to be installed in the ArcGIS python enviro
 |           --filter          | float |   False  |                            Filter out samples with few foreground pixels                           |   0.05  |                   0.05              |
 
 
-## create object detection samples
+* ## create object detection samples
 
 `ObjectDetection.py --input-image=xxx.tif --input-shpfile=xxx.shp --class-field=xxx --output-path=xxx`  
 
@@ -63,7 +63,7 @@ Similarly, tqdm, opencv, pillow need to be installed in the ArcGIS python enviro
 |       --vision       | bool |   FALSE  |                           whether to generate visualization results                           |    True    |                True                |                              |
 
 
-## create  classification samples 
+* ## create  classification samples 
 
 `Classification.py --input-image=xxx.tif --input-shpfile=xxx.shp --class-field=xxx --output-path=xxx` 
 
