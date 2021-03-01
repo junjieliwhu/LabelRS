@@ -12,8 +12,9 @@ Similarly, tqdm, opencv, pillow need to be installed in the ArcGIS python enviro
 
 # Usage
 * ## create semantic segmentation  samples
-
-`SemanticSegmentation.py --input-image=xxx.tif --input-shpfile=xxx.shp --class-field=xxx --output-path=xxx`  
+'''python
+SemanticSegmentation.py --input-image=xxx.tif --input-shpfile=xxx.shp --class-field=xxx --output-path=xxx`  
+'''
 
 ![water](https://github.com/junjieliwhu/LabelRS/blob/main/img/seg1.jpg)
 ![water](https://github.com/junjieliwhu/LabelRS/blob/main/img/seg1.png)
