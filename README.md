@@ -11,7 +11,9 @@ We strongly recommend using Python scripts instead of ArcGIS plugins
 Similarly, tqdm, opencv, pillow need to be installed in the ArcGIS python environment
 
 # usage
-create remote sensing images and labels for semantic segmentation  
+## create semantic segmentation  samples
+
+
 
 `SemanticSegmentation.py --input-image=xxx.tif --input-shpfile=xxx.shp --class-field=xxx --output-path=xxx`  
 
