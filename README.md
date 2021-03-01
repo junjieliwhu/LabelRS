@@ -44,7 +44,6 @@ Similarly, tqdm, opencv, pillow need to be installed in the ArcGIS python enviro
 `ObjectDetection.py --input-image=xxx.tif --input-shpfile=xxx.shp --class-field=xxx --output-path=xxx`  
 
 ![building](https://github.com/junjieliwhu/LabelRS/blob/main/img/object1.jpg)
-![water](https://github.com/junjieliwhu/LabelRS/blob/main/img/object2.jpg)
 
 ### Parameters Description  
 
