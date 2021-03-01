@@ -13,15 +13,13 @@ Similarly, tqdm, opencv, pillow need to be installed in the ArcGIS python enviro
 # usage
 ## create semantic segmentation  samples
 
+`SemanticSegmentation.py --input-image=xxx.tif --input-shpfile=xxx.shp --class-field=xxx --output-path=xxx`  
+
 ![water](https://github.com/junjieliwhu/LabelRS/blob/main/img/seg1.jpg)
 ![water](https://github.com/junjieliwhu/LabelRS/blob/main/img/seg1.png)
 
-![road](https://github.com/junjieliwhu/LabelRS/blob/main/img/seg2.jpg)
-![road](https://github.com/junjieliwhu/LabelRS/blob/main/img/seg2.png)
 
-`SemanticSegmentation.py --input-image=xxx.tif --input-shpfile=xxx.shp --class-field=xxx --output-path=xxx`  
-
-* Parameters Description  
+### Parameters Description  
 
 |             NAME            |  TYPE | REQUIRED |                                             DESCRIPTION                                            | DEFAULT |               EXAMPLE               |
 |:---------------------------:|:-----:|:--------:|:--------------------------------------------------------------------------------------------------:|:-------:|:-----------------------------------:|
@@ -45,7 +43,10 @@ Similarly, tqdm, opencv, pillow need to be installed in the ArcGIS python enviro
 
 `ObjectDetection.py --input-image=xxx.tif --input-shpfile=xxx.shp --class-field=xxx --output-path=xxx`  
 
-Parameters Description  
+![building](https://github.com/junjieliwhu/LabelRS/blob/main/img/object1.jpg)
+![water](https://github.com/junjieliwhu/LabelRS/blob/main/img/object2.jpg)
+
+### Parameters Description  
 
 |         NAME         | TYPE | REQUIRED |                                          DESCRIPTION                                          |   DEFAULT  |               EXAMPLE              |
 |:--------------------:|:----:|:--------:|:---------------------------------------------------------------------------------------------:|:----------:|:----------------------------------:|
@@ -63,11 +64,13 @@ Parameters Description
 |       --vision       | bool |   FALSE  |                           whether to generate visualization results                           |    True    |                True                |                              |
 
 
-create remote sensing images for classification 
+## create  classification samples 
 
-`Classification.py --input-image=xxx.tif --input-shpfile=xxx.shp --class-field=xxx --output-path=xxx`  
+`Classification.py --input-image=xxx.tif --input-shpfile=xxx.shp --class-field=xxx --output-path=xxx` 
 
-Parameters Description  
+![class](https://github.com/junjieliwhu/LabelRS/blob/main/img/classification.jpg)
+
+### Parameters Description  
 
 |         NAME         | TYPE | REQUIRED |                                              DESCRIPTION                                              | DEFAULT |               EXAMPLE              |
 |:--------------------:|:----:|:--------:|:-----------------------------------------------------------------------------------------------------:|:-------:|:----------------------------------:|
