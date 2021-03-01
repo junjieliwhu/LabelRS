@@ -39,6 +39,7 @@ SemanticSegmentation.py --input-image=xxx.tif --input-shpfile=xxx.shp --class-fi
 |       --glt-parameters      |  str  |   False  |                    The input parameters when Gray Level Transformation is Custom                   |   None  |         Water:1, building:2         |
 |           --filter          | float |   False  |                            Filter out samples with few foreground pixels                           |   0.05  |                   0.05              |
 
+***
 
 * ## create object detection samples
 
@@ -65,6 +66,8 @@ ObjectDetection.py --input-image=xxx.tif --input-shpfile=xxx.shp --class-field=x
 | --stretch-parameters |  str |   FALSE  |           the input parameters used for Percentage Truncation or Standard Deviation           |    None    |              0.5,99.5              |
 |       --vision       | bool |   FALSE  |                           whether to generate visualization results                           |    True    |                True                |                              |
 
+
+***
 
 * ## create  classification samples 
 
