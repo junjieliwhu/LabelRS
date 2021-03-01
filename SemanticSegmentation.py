@@ -54,7 +54,7 @@ def parse_args():
     parser.add_argument('--stretch-parameters', type=str, default='', required=False,
                         help='stretch parameters used for Percentage Truncation or Standard Deviation')
 
-    parser.add_argument('--gray-level-transformation', type=int, default=1,
+    parser.add_argument('--gray-level-transformation', type=int, default=0,
                         required=False, choices=[0, 1, 2, 3],
                         help='0,None; 1,Maximum Contrast; 2,Positive Integer; 3,Custom')
 
