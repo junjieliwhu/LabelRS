@@ -6,8 +6,8 @@ We strongly recommend using **Python scripts** instead of ArcGIS plugins
 * ESRI ArcGIS 10.2 and later versions  
 * Python Library: `tqdm`, `opencv`, `pillow`  
 
-> <b>Note:</b> Need to select ArcGIS's python environment as the python interpreter, the location usually is C:\Python27\ArcGIS10.2\python.exe  
-> Similarly, tqdm, opencv, pillow need to be installed in the ArcGIS python environment
+> <b>Note:</b> select ArcGIS's python environment as the python interpreter, the location usually is C:\Python27\ArcGIS10.2\python.exe  
+> tqdm, opencv, pillow need to be installed in the ArcGIS python environment
 
 # Usage
 * ## create semantic segmentation  samples
