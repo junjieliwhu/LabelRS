@@ -15,7 +15,7 @@ We strongly recommend using **Python scripts** instead of ArcGIS plugins
  1. Public land use vector data
  2. Drawn by users in ArcGIS. Build a new shapefile and add a field in attribute table, then start editing and draw polygons, finally set different attribute values for different types of features.
  3. Use eCognition. Use multiresolution segmentation in eCognition, and then output the segmentation vectors.
- 4. Use [AutoDraw]() in LabelRS to to assist segmentation. This is an independent toolkit based on GDAL, skimage and PIL, which can run in python2 and python3 environments. First, go to [main.py](), set SEGMENT_METHOD and RGB_LIST, set input and output. Then run main.py.
+ 4. Use [AutoDraw](https://github.com/junjieliwhu/LabelRS/tree/main/AutoDraw) in LabelRS to to assist segmentation. This is an independent toolkit based on GDAL, skimage and PIL, which can run in python2 and python3 environments. First, go to [main.py](), set SEGMENT_METHOD and RGB_LIST, set input and output. Then run main.py.
 
 # Usage
 * ## create semantic segmentation  samples
