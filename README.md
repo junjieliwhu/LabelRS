@@ -102,6 +102,7 @@ Classification.py --input-image=xxx.tif --input-shpfile=xxx.shp --class-field=xx
 | --stretch-parameters |  str |   FALSE  |                                the input parameters of band stretching                                |   None  |              0.5,99.5              |
 
 # Citation
+Li J, Meng L, Yang B, Tao C, Li L, Zhang W. LabelRS: An Automated Toolbox to Make Deep Learning Samples from Remote Sensing Images. Remote Sensing. 2021; 13(11):2064. https://doi.org/10.3390/rs13112064
 
 
 # Contact
