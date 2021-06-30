@@ -9,6 +9,14 @@ We strongly recommend using **Python scripts** instead of ArcGIS plugins
 > <b>Note:</b> select ArcGIS's python environment as the python interpreter, the location usually is C:\Python27\ArcGIS10.2\python.exe  
 > tqdm, opencv, pillow need to be installed in the ArcGIS python environment
 
+# Data preparation
+* Multispectral GeoTif, eg. GF2, WorldView，SPOT, Landsat (Layer Stacking is needed)
+* Labeled vector polygon data, it can be from the following
+ 1. Public land use vector data
+ 2. Drawn by users in ArcGIS. Build a new shapefile and add a field in attribute table, then start editing and draw polygons, finally set different attribute values for different types of features.
+ 3. Use eCognition. Use multiresolution segmentation in eCognition, and then output the segmentation vectors.
+ 4. Use [AutoDraw]() in LabelRS to to assist segmentation. This is an independent toolkit based on GDAL, skimage and PIL, which can run in python2 and python3 environments. First, go to [main.py](), set SEGMENT_METHOD and RGB_LIST, set input and output. Then run main.py.
+
 # Usage
 * ## create semantic segmentation  samples
 
