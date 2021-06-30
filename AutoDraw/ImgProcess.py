@@ -54,6 +54,7 @@ def stretch2GeoTiff(imgPath,resultFolder):
         outBand = outDataset.GetRasterBand(i+1)
         outBand.WriteArray(stretch[:,:,i], 0, 0)
         outBand.FlushCache()
+    return resultPath
 
 def getRSdata(imgPath):
     driver = gdal.GetDriverByName('GTiff')
@@ -68,6 +69,13 @@ def getRSinfo(ds):
     proj = ds.GetProjection()
     geoTransform = ds.GetGeoTransform()
     return (bands,cols,rows,proj,geoTransform)
+
+def getDataType(imgPath):
+    driver = gdal.GetDriverByName('GTiff')
+    driver.Register()
+    ds = gdal.Open(imgPath, GA_ReadOnly)
+    da=ds.ReadAsArray()
+    return da.dtype.name
 
 
 

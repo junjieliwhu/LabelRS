@@ -18,7 +18,7 @@ from skimage.segmentation import slic,felzenszwalb,quickshift,mark_boundaries,fi
 import shutil
 from tqdm import tqdm
 import glob
-from AutoDraw.ImgProcess import getRSdata,getRSinfo
+from AutoDraw.ImgProcess import getRSdata,getRSinfo,getDataType,stretch2GeoTiff
 from AutoDraw.VectorProcess import setBackground
 from AutoDraw.GeoConvert import raster2Vector,getNewGeoTransform
 
@@ -30,7 +30,20 @@ except:
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 Image.MAX_IMAGE_PIXELS = None
 
+'''
+SEGMENT_METHOD
+- Select different segmentation methods
+- Include  slic, felzenszwalb, quickshift
+- Adjust function parameters in array2Vector() to obtain the best segmentation
+Reference: https://scikit-image.org/docs/0.14.x/api/skimage.segmentation.html?highlight=seg#module-skimage.segmentation
+'''
 SEGMENT_METHOD='quickshift' # slic, felzenszwalb, quickshift
+
+'''
+RGB_LIST
+- R,G,B band number in multispectral images
+- for example, GF2 PMS data include B,G,R,NIR bands, RGB_LIST = [3,2,1]
+'''
 RGB_LIST=[3,2,1]
 
 def autodraw(imgPath,outputFolder,rgb_list=RGB_LIST):
@@ -41,6 +54,11 @@ def autodraw(imgPath,outputFolder,rgb_list=RGB_LIST):
         os.mkdir(tempDir)
     else:
         os.mkdir(tempDir)
+
+    # stretch
+    if getDataType(imgPath) != 'uint8':
+        newTif=stretch2GeoTiff(imgPath,tempDir)
+        imgPath=newTif
 
     # block size
     cutW = 512
@@ -79,7 +97,7 @@ def autodraw(imgPath,outputFolder,rgb_list=RGB_LIST):
 
                 data = ds.ReadAsArray(j, i, numCols, numRows)
                 data = data.astype(np.uint8)
-                if len(np.unique(data)) == 1:  # 单一颜色或者背景
+                if len(np.unique(data)) == 1:
                     setBackground(vLayer, i, j, numCols, numRows, geoTransform)
                 else:
                     array2Vector(data, rgb_list, tempDir, str(i) + "_" + str(j), numCols, numRows, geoTransform, proj,i,j)
@@ -133,8 +151,8 @@ def array2Vector(data,rgb_list,tempDir,segName,numCols, numRows,geoTransform,pro
 
 if __name__=="__main__":
 
-    imgPath = r'H:\paper\WaterExtract\data\clip2.tif'
-    output = r'H:\paper\WaterExtract\data\result'
+    imgPath = r''
+    output = r''
     autodraw(imgPath,output)
 
 
