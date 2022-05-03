@@ -10,6 +10,7 @@ We strongly recommend using **Python scripts** instead of ArcGIS plugins
 > tqdm, opencv, pillow need to be installed in the ArcGIS python environment
 
 # Data preparation
+* Make sure your file's coordinate system is WGS84
 * Multispectral GeoTif, eg. GaoFen, WorldView，SPOT, Landsat (Layer Stacking is needed)
 * Labeled vector polygon data, it can be from the following
  1. Public land use vector data
