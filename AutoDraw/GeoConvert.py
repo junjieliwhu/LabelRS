@@ -44,16 +44,19 @@ def raster2Vector(outDataset,vector):
         pass
     proj = outDataset.GetProjection()
     output_shp = vector
+    
     # create output file name
     output_shapefile = shp_driver.CreateDataSource(output_shp + ".shp")
 
     geosrs = osr.SpatialReference()
     geosrs.ImportFromWkt(proj)
-    new_shapefile = output_shapefile.CreateLayer(output_shp, srs=geosrs)
-
-    # gdal.Polygonize(rasterBand, None, new_shapefile, -1, [], callback=None)
-    gdal.FPolygonize(outDataset.GetRasterBand(1), None, new_shapefile, 0)
-    new_shapefile.SyncToDisk()
-
-    output_name=output_shp + ".shp"
-    return output_name
+    outLayer = output_shapefile.CreateLayer(output_shp, srs=geosrs)
+    newField = ogr.FieldDefn('Class', ogr.OFTInteger)
+    outLayer.CreateField(newField)
+    
+    gdal.Polygonize(outDataset.GetRasterBand(1), None, outLayer, 0, [], callback=None)
+    # gdal.FPolygonize(outDataset.GetRasterBand(1), None, new_shapefile, 0)
+    outLayer.SyncToDisk()
+    
+#     output_name=output_shp + ".shp"
+    return output_shp
