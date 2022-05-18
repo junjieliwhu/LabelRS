@@ -144,7 +144,7 @@ def array2Vector(data,rgb_list,tempDir,segName,numCols, numRows,geoTransform,pro
     outDataset.SetGeoTransform(getNewGeoTransform(geoTransform, startRow, startCol))
     outDataset.SetProjection(proj)
     outDataset.GetRasterBand(1).WriteArray(boundaries)
-    raster2Vector(outDataset, os.path.join(tempDir, segName))
+    raster2Vector(outDataset, os.path.join(tempDir, segName+'.shp'))
     outDataset = None
     driver2 = None
     os.remove(seg_tif)
