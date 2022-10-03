@@ -12,7 +12,6 @@ We strongly recommend using **Python scripts** instead of ArcGIS plugins
 # Data preparation
 * Make sure your file's coordinate system is WGS84
 * Multispectral GeoTif, eg. GaoFen, Sentinel-2，SPOT, Landsat (Layer Stacking is needed)
-* unsigned int is supported, float data is not supported
 * Labeled vector polygon data, it can be from the following
  1. Public land use vector data
  2. Drawn by users in ArcGIS. Build a new shapefile and add a field in attribute table, then start editing and draw polygons, finally set different attribute values for different types of features.
