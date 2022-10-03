@@ -178,31 +178,28 @@ def createImgByObjectInfo(inputImg, tag, format, imgExtent,
     my_array = arcpy.RasterToNumPyArray(outputTif)  #
     min = np.min(my_array)
     max = np.max(my_array)
-    if min < 0 or max > 255:
-        # default is Percentage Truncation stretch
-        stretch = percentStretch(my_array)  # default is 0.5,99.5
-        if stretch_method == 0:
-            if len(stretch_parameters) != 0:
-                stretchParameters = stretch_parameters.split(',')
-                stretchParameters.sort()
-                stretchPercentMin = float(stretchParameters[0])
-                stretchPercentMax = float(stretchParameters[1])
-                stretch = percentStretch(my_array, stretchPercentMin, stretchPercentMax)
-        if stretch_method == 1:
-            if len(stretch_parameters) != 0:
-                stdDevStretch = float(stretch_parameters)
-                stretch = stdStretch(my_array, stdDevStretch)
-            else:
-                stretch = stdStretch(my_array)  # default is 2.5
-        if stretch_method == 2:
-            stretch = minmaxStretch(my_array)
-        new_raster = arcpy.NumPyArrayToRaster(stretch)
-        arcpy.CopyRaster_management(new_raster, outputImg, "DEFAULTS", "0", "0", "", "",
-                                    "8_BIT_UNSIGNED", "", "")
-        arcpy.Delete_management(new_raster)
-    else:
-        arcpy.CopyRaster_management(outputTif, outputImg, "DEFAULTS", "0", "0", "", "",
-                                    "8_BIT_UNSIGNED", "", "")
+
+    # default is Percentage Truncation stretch
+    stretch = percentStretch(my_array)  # default is 0.5,99.5
+    if stretch_method == 0:
+        if len(stretch_parameters) != 0:
+            stretchParameters = stretch_parameters.split(',')
+            stretchParameters.sort()
+            stretchPercentMin = float(stretchParameters[0])
+            stretchPercentMax = float(stretchParameters[1])
+            stretch = percentStretch(my_array, stretchPercentMin, stretchPercentMax)
+    if stretch_method == 1:
+        if len(stretch_parameters) != 0:
+            stdDevStretch = float(stretch_parameters)
+            stretch = stdStretch(my_array, stdDevStretch)
+        else:
+            stretch = stdStretch(my_array)  # default is 2.5
+    if stretch_method == 2:
+        stretch = minmaxStretch(my_array)
+    new_raster = arcpy.NumPyArrayToRaster(stretch)
+    arcpy.CopyRaster_management(new_raster, outputImg, "DEFAULTS", "0", "0", "", "",
+                                "8_BIT_UNSIGNED", "", "")
+    arcpy.Delete_management(new_raster)
     shutil.copy(tfw, outputGeo)
     arcpy.Delete_management(outputTif)
     for file in os.listdir(workspace):
@@ -264,36 +261,32 @@ def createImgByPolygons(tag, inputImg, polygons, imageDir, labelDir, resultForma
     my_array = arcpy.RasterToNumPyArray(outTif)  #
     min = np.min(my_array)
     max = np.max(my_array)
-    if min < 0 or max > 255:
-        # default is Percentage Truncation stretch
-        stretch = percentStretch(my_array)  # default is 0.5,99.5
-        if stretch_method == 0:
-            if len(stretch_parameters) != 0:
-                stretchParameters = stretch_parameters.split(',')
-                stretchParameters.sort()
-                stretchPercentMin = float(stretchParameters[0])
-                stretchPercentMax = float(stretchParameters[1])
-                stretch = percentStretch(my_array, stretchPercentMin, stretchPercentMax)
-        if stretch_method == 1:
-            if len(stretch_parameters) != 0:
-                stdDevStretch = float(stretch_parameters)
-                stretch = stdStretch(my_array, stdDevStretch)
-            else:
-                stretch = stdStretch(my_array)  # default is 2.5
-        if stretch_method == 2:
-            stretch = minmaxStretch(my_array)
-        new_raster = arcpy.NumPyArrayToRaster(stretch)
-        # lower version 10.2
-        arcpy.CopyRaster_management(new_raster, outputImg, "DEFAULTS", "0", "0", "", "",
-                                    "8_BIT_UNSIGNED", "", "")
-        # higher version 10.5
-        # arcpy.CopyRaster_management(new_raster, outputImg, "DEFAULTS", "0", "0", "", "",
-        #                             "8_BIT_UNSIGNED", "", "", 'JPEG')
-        arcpy.Delete_management(new_raster)
 
-    else:
-        arcpy.CopyRaster_management(outTif, outputImg, "DEFAULTS", "0", "0", "", "",
-                                    "8_BIT_UNSIGNED", "", "")
+    # default is Percentage Truncation stretch
+    stretch = percentStretch(my_array)  # default is 0.5,99.5
+    if stretch_method == 0:
+        if len(stretch_parameters) != 0:
+            stretchParameters = stretch_parameters.split(',')
+            stretchParameters.sort()
+            stretchPercentMin = float(stretchParameters[0])
+            stretchPercentMax = float(stretchParameters[1])
+            stretch = percentStretch(my_array, stretchPercentMin, stretchPercentMax)
+    if stretch_method == 1:
+        if len(stretch_parameters) != 0:
+            stdDevStretch = float(stretch_parameters)
+            stretch = stdStretch(my_array, stdDevStretch)
+        else:
+            stretch = stdStretch(my_array)  # default is 2.5
+    if stretch_method == 2:
+        stretch = minmaxStretch(my_array)
+    new_raster = arcpy.NumPyArrayToRaster(stretch)
+    # lower version 10.2
+    arcpy.CopyRaster_management(new_raster, outputImg, "DEFAULTS", "0", "0", "", "",
+                                "8_BIT_UNSIGNED", "", "")
+    # higher version 10.5
+    # arcpy.CopyRaster_management(new_raster, outputImg, "DEFAULTS", "0", "0", "", "",
+    #                             "8_BIT_UNSIGNED", "", "", 'JPEG')
+    arcpy.Delete_management(new_raster)
     shutil.copy(os.path.join(imageDir, tfw), outputGeo)
     arcpy.Delete_management(outTif)
     for file in os.listdir(imageDir):
@@ -304,7 +297,6 @@ def createImgByPolygons(tag, inputImg, polygons, imageDir, labelDir, resultForma
             _, extension = os.path.splitext(file)
             if not extension in extensions:
                 os.remove(os.path.join(imageDir, file))
-
     if not checkFile(outputImg):
         os.remove(outputImg)
         os.remove(outputGeo)
