@@ -136,14 +136,14 @@ def array2Vector(data,rgb_list,tempDir,segName,numCols, numRows,geoTransform,pro
     if SEGMENT_METHOD.lower()=='quickshift':
         segments = quickshift(rgb_stack, ratio=1.0, kernel_size=5, max_dist=10)
 
-    boundaries = find_boundaries(segments, mode='outer')
+    # boundaries = find_boundaries(segments, mode='outer')
     seg_tif = os.path.join(tempDir, 'seg.tif')
     driver2 = gdal.GetDriverByName('GTiff')
     driver2.Register()
     outDataset = driver2.Create(seg_tif, numCols, numRows, 1, GDT_Float32)
     outDataset.SetGeoTransform(getNewGeoTransform(geoTransform, startRow, startCol))
     outDataset.SetProjection(proj)
-    outDataset.GetRasterBand(1).WriteArray(boundaries)
+    outDataset.GetRasterBand(1).WriteArray(segments)
     raster2Vector(outDataset, os.path.join(tempDir, segName+'.shp'))
     outDataset = None
     driver2 = None
