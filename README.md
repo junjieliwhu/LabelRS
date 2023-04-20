@@ -104,14 +104,3 @@ Classification.py --input-image=xxx.tif --input-shpfile=xxx.shp --class-field=xx
 
 # Citation
 Li J, Meng L, Yang B, Tao C, Li L, Zhang W. LabelRS: An Automated Toolbox to Make Deep Learning Samples from Remote Sensing Images. Remote Sensing. 2021; 13(11):2064. https://doi.org/10.3390/rs13112064
-
-
-# Contact
-
-Junjie Li, School of Remote Sensing and Information Engineering, Wuhan University  
-
-Email: junjieli@whu.edu.cn
-
-
-
-
