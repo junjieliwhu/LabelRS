@@ -2,12 +2,23 @@
 A toolbox to make deep learning samples from remote sensing images  
 We strongly recommend using **Python scripts** instead of ArcGIS plugins
 
-# Requirements
+## New Features & Updates!
+✅ 2023-05-01: Added [AutoDraw](https://github.com/junjieliwhu/LabelRS/tree/main/AutoDraw) in LabelRS to to assist segmentation.  
+- The automatic segmentation algorithms supported by AutoDraw include:
+- [slic, felzenszwalb, quickshift](https://scikit-image.org/docs/0.14.x/api/skimage.segmentation.html?highlight=seg#module-skimage.segmentation)
+- [sam (Segment Anything Model)](https://github.com/facebookresearch/segment-anything)
+> <b>Note:</b> [AutoDraw](https://github.com/junjieliwhu/LabelRS/tree/main/AutoDraw) and [LabelRS](https://github.com/junjieliwhu/LabelRS) are independent.
+
+## Requirements
+### LabelRS 
 * ESRI ArcGIS 10.2 and later versions  
 * Python Library: `tqdm`, `opencv`, `pillow`  
 
 > <b>Note:</b> select ArcGIS's python environment as the python interpreter, the location usually is C:\Python27\ArcGIS10.2\python.exe  
 > tqdm, opencv, pillow need to be installed in the ArcGIS python environment
+
+### AutoDraw 
+
 
 # Data preparation
 * Make sure your file's coordinate system is WGS84
