@@ -10,26 +10,24 @@ We strongly recommend using **Python scripts** instead of ArcGIS plugins
 > <b>Note:</b> [AutoDraw](https://github.com/junjieliwhu/LabelRS/tree/main/AutoDraw) and [LabelRS](https://github.com/junjieliwhu/LabelRS) are independent.
 
 ## Requirements
-### LabelRS 
 * ESRI ArcGIS 10.2 and later versions  
 * Python Library: `tqdm`, `opencv`, `pillow`  
 
 > <b>Note:</b> select ArcGIS's python environment as the python interpreter, the location usually is C:\Python27\ArcGIS10.2\python.exe  
 > tqdm, opencv, pillow need to be installed in the ArcGIS python environment
 
-### AutoDraw 
-
-
-# Data preparation
+## Data preparation
 * Make sure your file's coordinate system is WGS84
-* Multispectral GeoTif, eg. GaoFen, Sentinel-2，SPOT, Landsat (Layer Stacking is needed)
-* Labeled vector polygon data, it can be from the following
+* Multispectral GeoTif, eg. GaoFen, Sentinel-2, Landsat (Layer Stacking is needed)
+* Labeled vector polygon data, which can be obtained from the following sources
  1. Public land use vector data
  2. Drawn by users in ArcGIS. Build a new shapefile and add a field in attribute table, then start editing and draw polygons, finally set different attribute values for different types of features.
  3. Use eCognition. Use multiresolution segmentation in eCognition, and then output the segmentation vectors.
- 4. Use [AutoDraw](https://github.com/junjieliwhu/LabelRS/tree/main/AutoDraw) in LabelRS to to assist segmentation. This is an independent toolkit based on GDAL, skimage and PIL, which can run in python2 and python3 environments. First, go to [main.py](https://github.com/junjieliwhu/LabelRS/blob/main/AutoDraw/main.py), set SEGMENT_METHOD and RGB_LIST, set input and output. Then run main.py.
+ 4. Use [AutoDraw](https://github.com/junjieliwhu/LabelRS/tree/main/AutoDraw) in LabelRS to to assist segmentation. This is an independent toolkit based on GDAL, skimage and PIL.  
+> <b>Note:</b> If you want to use AutoDraw to assist segmentation, please install `opencv`, `pillow`, `GDAL` and `scikit-image` libraries, and Python 3 environment is recommended.  
+> If you want to use facebookresearch/segment-anything, please make sure python>=3.8, as well as pytorch>=1.7 and torchvision>=0.8. For details, see https://github.com/facebookresearch/segment-anything
 
-# Usage
+## Usage
 * ## create semantic segmentation  samples
 
 ```Python  
