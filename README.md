@@ -5,7 +5,9 @@ We strongly recommend using **Python scripts** instead of ArcGIS plugins
 ## New Features & Updates!
 ✅ 2023-05-01: Added [AutoDraw](https://github.com/junjieliwhu/LabelRS/tree/main/AutoDraw) in LabelRS to to assist segmentation.  
 - The automatic segmentation algorithms supported by AutoDraw include:
-- [slic, felzenszwalb, quickshift](https://scikit-image.org/docs/0.14.x/api/skimage.segmentation.html?highlight=seg#module-skimage.segmentation)
+- [slic](https://scikit-image.org/docs/0.14.x/api/skimage.segmentation.html?highlight=seg#module-skimage.segmentation)
+- [felzenszwalb](https://scikit-image.org/docs/0.14.x/api/skimage.segmentation.html?highlight=seg#module-skimage.segmentation)
+- [quickshift](https://scikit-image.org/docs/0.14.x/api/skimage.segmentation.html?highlight=seg#module-skimage.segmentation)
 - [sam (Segment Anything Model)](https://github.com/facebookresearch/segment-anything)
 > <b>Note:</b> [AutoDraw](https://github.com/junjieliwhu/LabelRS/tree/main/AutoDraw) and [LabelRS](https://github.com/junjieliwhu/LabelRS) are independent.
 
