@@ -22,10 +22,11 @@ We strongly recommend using **Python scripts** instead of ArcGIS plugins
 * Labeled vector polygon data, which can be obtained from the following sources
  1. Public land use vector data
  2. Drawn by users in ArcGIS. Build a new shapefile and add a field in attribute table, then start editing and draw polygons, finally set different attribute values for different types of features.
- 3. Use eCognition. Use multiresolution segmentation in eCognition, and then output the segmentation vectors.
- 4. Use [AutoDraw](https://github.com/junjieliwhu/LabelRS/tree/main/AutoDraw) in LabelRS to to assist segmentation. This is an independent toolkit based on GDAL, skimage and PIL.  
+ 3. Use [eCognition](https://geospatial.trimble.com/what-is-ecognition). Use multiresolution segmentation in eCognition, and then output the segmentation vectors.
+ 4. Use [AutoDraw](https://github.com/junjieliwhu/LabelRS/tree/main/AutoDraw) in LabelRS to to assist segmentation. This is an independent toolkit based on GDAL, OpenCV, skimage and PIL.  
 > <b>Note:</b> Use AutoDraw to assist segmentation, please install `opencv`, `pillow`, `GDAL` and `scikit-image` libraries, and Python3 environment is recommended.  
-> If you want to use Segment Anything Model, please make sure python>=3.8, as well as pytorch>=1.7 and torchvision>=0.8. For details, see [Segment Anything Model requirements](https://github.com/facebookresearch/segment-anything) 
+> If you want to use Segment Anything Model, please make sure python>=3.8, and additionally pytorch>=1.7 and torchvision>=0.8. For details, see [Segment Anything Model requirements](https://github.com/facebookresearch/segment-anything)   
+> In short, AutoDraw and LabelRS are independent packages, for example, you can use python 2.7 to execute labelRS, and use python 3 to execute AutoDraw.
 
 ## Usage
 * ## create semantic segmentation  samples
