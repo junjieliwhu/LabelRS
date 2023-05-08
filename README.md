@@ -26,7 +26,7 @@ We strongly recommend using **Python scripts** instead of ArcGIS plugins
  4. Use [AutoDraw](https://github.com/junjieliwhu/LabelRS/tree/main/AutoDraw) in LabelRS to to assist segmentation. This is an independent toolkit based on GDAL, OpenCV, skimage and PIL.  
 > <b>Note:</b> Use AutoDraw to assist segmentation, please install `opencv`, `pillow`, `GDAL` and `scikit-image` libraries, and Python3 environment is recommended.  
 > If you want to use Segment Anything Model, please make sure python>=3.8, and additionally pytorch>=1.7 and torchvision>=0.8. For details, see [Segment Anything Model requirements](https://github.com/facebookresearch/segment-anything)   
-> In short, AutoDraw and LabelRS are independent packages, for example, you can use python 2.7 to execute labelRS, and use python 3 to execute AutoDraw.
+> In short, AutoDraw and LabelRS are independent packages, for example, you can use python 2.7 to execute labelRS, and use python 3 to execute AutoDraw. This may seem strange, but LabelRS depends on ArcPy (Python 2.7), and I'm thinking of fully migrating LabelRS to a Python 3 environment.
 
 ## Usage
 * ## create semantic segmentation  samples
